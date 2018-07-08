@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://spacemesh.io"><img width="400" src="https://spacemesh.io/content/images/2018/05/logo-black-on-white-trimmed.png" alt="Spacemesh logo" /></a>
-  <p align="center">Spacemesh App</p>
+  <p align="center">Spacemesh App 🏦📊</p>
 </h1>
 
 The cosmic Spacemesh App containing the Spacemesh Wallet and the Spacemesh Dashboard.
