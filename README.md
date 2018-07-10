@@ -6,8 +6,10 @@
 The cosmic Spacemesh App containing the Spacemesh Wallet and the Spacemesh Dashboard.
 This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spacemeshos/cosmic).
 
+## Default Screen
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/app_home.png)
 
+## Main Wallet Screen
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/main_ux.png)
 
 ## Getting Started
