@@ -3,6 +3,13 @@
   <p align="center">Spacemesh App 🏦📊</p>
 </h1>
 
+<p align="center">
+<a href="https://gitcoin.co/profile/spacemeshos" title="Push Open Source Forward">
+    <img src="https://gitcoin.co/static/v2/images/promo_buttons/slice_02.png" width="267px" height="52px" alt="Browse Gitcoin Bounties"/>
+</a>
+</p>
+
+
 The cosmic Spacemesh App containing the Spacemesh Wallet and the Spacemesh Dashboard.
 This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spacemeshos/cosmic).
 
