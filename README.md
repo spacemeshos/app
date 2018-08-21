@@ -20,7 +20,6 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/9.jpg)
 
-![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/18.jpg)
 
 ## Getting Started
 - Please head over to [the wiki](https://github.com/spacemeshos/spacemesh-app/wiki) and read the product requirements and deisgn docs
