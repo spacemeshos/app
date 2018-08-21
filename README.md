@@ -16,7 +16,7 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 ## Design Concept
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/w13.jpg)
 
-!p[(https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/1.jpg)
+![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/1.jpg)
 
 ## Main Wallet Screen
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/main_ux.png)
