@@ -15,6 +15,8 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
 ## Design Concept
 
+<h1 align="center">
+
  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/desktop_account_first_view.jpg" width="1000px" />
 
 
@@ -22,6 +24,8 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
 
  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/mobile_net_select.jpg" width="500px" />
+
+</h1>
 
 Click an image to view full size. 
 
