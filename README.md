@@ -18,8 +18,11 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/mobile_account_first_time.jpg)
 
-![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/9.jpg)
+![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/mobile_net_select.jpg)
 
+Click an image to view full size. 
+
+[Browse latest design mocks](https://github.com/spacemeshos/app/tree/master/design/resources/mocks2.0)
 
 ## Getting Started
 - Please head over to [the wiki](https://github.com/spacemeshos/spacemesh-app/wiki) and read the product requirements and deisgn docs
