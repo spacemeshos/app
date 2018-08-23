@@ -14,9 +14,9 @@ The cosmic Spacemesh App containing the Spacemesh Wallet and the Spacemesh Dashb
 This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spacemeshos/cosmic).
 
 ## Design Concept
-![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/w13.jpg)
+![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/desktop_account_first_view.jpg)
 
-![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/1.jpg)
+![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/mobile_account_first_time.jpg)
 
 ![](https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks/9.jpg)
 
