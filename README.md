@@ -25,9 +25,32 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/mocks2.0/mobile_net_select.jpg" width="500px" />
 
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_first_run.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_main_view.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_views.png" />
+
+  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_send_smc.png" />
+
+  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_Send_smc_1.png" />
+
+  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_account_backup_0.png" />
+
+  <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_account_backup.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_get_smc.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_multiple_accounts_and_wallets.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_tx_log.png" />
+
+ <img src="https://raw.githubusercontent.com/spacemeshos/app/master/design/resources/concept2.0/mobile_unlock_wallet.png" />
+
 </h1>
 
-- Click on an image to view full size 
+- Click on an image to view full size
 - [Browse latest design mocks](https://github.com/spacemeshos/app/tree/master/design/resources/mocks2.0)
 - [Browse Design Guide](https://docs.google.com/presentation/d/1pIJ27TggMRrgfJ8fK8cp1-FLugFK2T2_86s7mmKCakI/edit?usp=sharing)
 
