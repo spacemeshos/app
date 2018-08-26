@@ -27,7 +27,7 @@ This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spaceme
 
 </h1>
 
-- Click an image to view full size. 
+- Click on an image to view full size 
 - [Browse latest design mocks](https://github.com/spacemeshos/app/tree/master/design/resources/mocks2.0)
 - [Browse Design Guide](https://docs.google.com/presentation/d/1pIJ27TggMRrgfJ8fK8cp1-FLugFK2T2_86s7mmKCakI/edit?usp=sharing)
 
