@@ -61,3 +61,103 @@ We are using [Cosmic](https://github.com/spacemeshos/cosmic) as the seed for thi
 - Please head over to [the wiki](https://github.com/spacemeshos/spacemesh-app/wiki) and read the product requirements and deisgn docs
 - Join our [Dev Gitter Chat](https://gitter.im/spacemesh-os/app)
 - We are actively looking for contributors, collaborators and maintainers. Get in touch via Gitter
+
+## Setup
+1. Clone the repo
+
+```
+git clone https://github.com/spacemeshos/app.git
+```
+
+2. Follow [these instructions](https://facebook.github.io/react-native/docs/getting-started.html
+) for setting up a React Native project dev environment
+
+### Install project dependencies
+```yarn install```
+
+
+### Development builds
+
+#### web
+``` yarn web ```
+
+#### Mobile
+Remove all build directories (optional):
+
+``` yarn clean-all```
+
+Generate android and ios builds:
+
+``` yarn mobile```
+
+Serve App on Android Emulator:
+
+```yarn android```
+
+Serve App on iOS Simulator:
+
+```yarn ios```
+
+Start and Electron dev app session:
+
+```yarn electron-dev```  
+
+### Production builds
+
+#### Mobile
+```yarn mobile```
+
+#### Web
+```yarn build```
+
+#### Desktop
+```yarn dist```
+
+#### Bundling for Android
+```yarn bundle-android```
+
+#### Building for OS X, Windows and Linux
+```yarn electron-pack```
+
+
+### Android Dev Notes
+1. Follow the React Native instructions for installing Android dev tools
+
+2. Make sure you have JAVA_HOME env var set to the Java 8 JDK as well as your ANDROID_HOME
+
+```
+e.g: export JAVA_HOME=<path-to-your-jdk>/<jdk>/Contents/Home
+export ANDROID_HOME=<path-to-your-android-sdk>
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+```
+3. Run the emulator with an Android 6 (with Google Play) device
+
+4. Update `build-scripts/local.properties` with the right path to your android sdk. [Detailed instructions](https://stackoverflow.com/questions/32634352/react-native-android-build-failed-sdk-location-not-found/43626724#43626724).
+
+
+### Tests
+This seed uses Jest for unit testing and calabash-android for android automation testing.
+
+#### Running Calabash Android Tests
+1. Install [ruby](https://rubyonrails.org)
+1. Run ```bundle install```
+2. Run ```bundle exec calabash-android run /path/to/android/apk/file```
+
+### Running unit tests
+```yarn test```
+
+### Known issues
+1. The name react-native was looked up in the Haste module map. Remove the *haste-map-* files from your tmp file and rebuild.
+For Linux
+```rm -rf /tmp/haste-map-*```
+For OSX
+```
+yarn cache clean
+watchman watch-del-all
+rm -rf $TMPDIR/metro-bundler-cache-*
+rm -rf $TMPDIR/metro-cache-*
+rm -rf $TMPDIR/react-native-packager-cache-*
+rm -rf $TMPDIR/haste-map-metro-*
+```
+
