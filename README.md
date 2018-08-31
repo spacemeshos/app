@@ -98,7 +98,7 @@ Serve App on iOS Simulator:
 
 ```yarn ios```
 
-Start and Electron dev app session:
+Start an Electron dev app session:
 
 ```yarn electron-dev```  
 
