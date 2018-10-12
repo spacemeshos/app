@@ -10,10 +10,10 @@
 - You must write UI tests for all new UI functionality
 
 ## PR Submission checklist
-- [] The latest develop branch code is merged into your work branch
-- [] All new code is properly documented
-- [] Unit tests for all new functions and methoods
-- [] Intergration tests for all new flows
-- [] UI tests for all new UI widgets
-- [] All new code is fully linted
-- [] All targets compile on your branch
+- [ ] The latest develop branch code is merged into your work branch
+- [ ] All new code is properly documented
+- [ ] Unit tests for all new functions and methoods
+- [ ] Intergration tests for all new flows
+- [ ] UI tests for all new UI widgets
+- [ ] All new code is fully linted
+- [ ] All targets compile on your branch
