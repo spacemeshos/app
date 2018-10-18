@@ -16,4 +16,4 @@ A clear and concise description of any alternative solutions or features you've 
 **Additional context**
 Add any other context or screenshots about the feature request here.
 
-See [Contributing.md](./CONTRIBUTING.md) for more guidelines
+See [CONTRIBUTING.md](https://github.com/spacemeshos/app/blob/master/CONTRIBUTING.md) for contribution guidelines

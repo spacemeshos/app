@@ -15,6 +15,8 @@ valued.
   * [Step 6: PRs](#step-6-prs)
   * [Step 7: Tests](#step-7-tests)
   * [Step 8: PR Submission Checklist](#step-8-pr-submission-checklist)
+  * [Step 9: Coding Style](#step-9-coding-style)
+  * [Step 10: Acceptance Criteria](#step-10-acceptance-criteria)
 
 ## Issues
 
@@ -143,3 +145,13 @@ Please ensure that your pull request follows all of the community guidelines to 
 - [ ] UI tests for all new UI widgets
 - [ ] All new code is fully linted
 - [ ] All targets compile on your branch
+
+## Step 9: Coding Style
+- Follow closely the coding style present in the codebase
+- All methods, models, types and interfaces must be documented via short and simple text comments
+- All Typescript code must pass tslint
+
+# Step 10: Acceptance Criteria
+- There should be unit tests and integration tests for all implemented functionality
+- The test coverage should be greater than 90%
+- Use Jest testing suite
