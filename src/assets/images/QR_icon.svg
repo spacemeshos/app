@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #03946b;
+        font-size: 20px;
+        font-family: FontAwesome;
+      }
+    </style>
+  </defs>
+  <text id="QR_icon" class="cls-1" transform="translate(0 17)"><tspan x="0" y="0"></tspan></text>
+</svg>

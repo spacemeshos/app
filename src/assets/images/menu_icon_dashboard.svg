@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.669 19.778">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00c28c;
+      }
+    </style>
+  </defs>
+  <path id="menu_icon_dashboard" class="cls-1" d="M15.68,31.505a9.276,9.276,0,0,1-6.593,2.673A9.087,9.087,0,1,1,9.087,16v9.087Zm-4.989-8.018V14.4a9.125,9.125,0,0,1,9.087,9.087Zm9.978,1.6A9.946,9.946,0,0,1,18,31.683L11.4,25.091Z" transform="translate(0 -14.4)"/>
+</svg>
