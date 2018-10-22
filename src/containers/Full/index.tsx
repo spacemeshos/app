@@ -5,13 +5,15 @@ import Menu from '../../components/Menu';
 import Navbar from '../../components/Navbar';
 const { Route, Switch } = Routing;
 import Dashboard from '../../components/Dashboard';
-import { View, Platform } from 'react-native';
+import { View, Platform, Dimensions } from 'react-native';
 import Aside from '../../components/Aside';
 
 interface IState {
     isOpen: boolean;
     selectedItem: string;
 }
+
+const { width, height } = Dimensions.get('window');
 
 class Full extends React.Component<{}, IState> {
     constructor(props: any) {
@@ -52,8 +54,9 @@ class Full extends React.Component<{}, IState> {
                             height: '100vh',
                             alignSelf: 'stretch'
                         }}>
+                            <Navbar />
                             <Aside />
-                            <View style={{ marginLeft: 200, padding: 20 }}>
+                            <View style={{ marginLeft: width * 0.25, padding: 20 }}>
                                 <Switch>
                                     <Route path="/" name="Dashboard" component={Dashboard} />
                                 </Switch>
@@ -63,7 +66,7 @@ class Full extends React.Component<{}, IState> {
                         <View style={{
                             display: 'flex',
                             flexWrap: 'wrap',
-                            height: '100vh',
+                            height: height,
                         }}>
                             <SideMenu
                                 menu={menu}

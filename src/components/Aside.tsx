@@ -1,25 +1,32 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Navbar from './Navbar';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
+const { height, width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     sidebar: {
-        backgroundColor: '#000',
-        width: 200,
-        minHeight: '100vh',
+        width: width * 0.25,
+        minHeight: height - 66,
         position: 'absolute',
         top: 0,
         bottom: 0,
+        borderRightColor: 'rgba(0, 0, 0, 0.3)',
+        borderRightWidth: 1,
+        borderStyle: 'solid',
         zIndex: -999,
     }
 })
 
 const Aside = () => (
     <View>
-        <Navbar />
         <View style={styles.sidebar}>
-            <Text>Hello World</Text>
+        <View style={{
+            marginTop: 33,
+        }}>
+            <Text style={{
+                padding: 20
+            }}>Home</Text>
+        </View>
         </View>
     </View>
 );
