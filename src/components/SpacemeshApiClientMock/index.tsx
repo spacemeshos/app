@@ -2,15 +2,15 @@ import * as React from "react";
 import { ISpacemeshApi } from '../../model';
 import { Transaction, TransactionStatus } from 'src/types';
 
-interface IProps {
-
+interface IProps extends ISpacemeshApi{
+    apiReady: boolean;
 }
 
 interface IState {
     connectedToApi: boolean;
 }
 
-const SpacemeshApiClientMock = <P extends object>(Component: React.ComponentType<P>) => {
+const SpacemeshApiClientMock = <P extends IProps>(Component: React.ComponentType<P>) => {
     return class SpacemeshApiClientMock extends React.Component<P & IProps, IState> implements ISpacemeshApi {
         constructor(props: P & IProps) {
             super(props);
@@ -115,7 +115,17 @@ const SpacemeshApiClientMock = <P extends object>(Component: React.ComponentType
 
         render() {
 
-            return Component;
+            return <Component
+            {...this.props} 
+            apiReady = {this.state.connectedToApi}
+            postTransaction = {this.postTransaction}
+            getAddressBalance = {this.getAddressBalance}
+            getAddressFromTransaction = {this.getAddressFromTransaction}
+            buySMCFromExchange = {this.buySMCFromExchange}
+            getCurrentSMCPrice = {this.getCurrentSMCPrice}
+            getSMCfromTestNetTap = {this.getSMCfromTestNetTap}
+            getTransactionStatus = {this.getTransactionStatus}
+            />;
         }
     }
 }
