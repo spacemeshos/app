@@ -1,4 +1,4 @@
-type Transaction = { 
+interface ITransaction  { 
     blockHash: string;
     blockNumber: number;
     chainId?: string; 
@@ -21,4 +21,4 @@ type Transaction = {
     value: number;
 }
 
-export default Transaction;
+export default ITransaction;

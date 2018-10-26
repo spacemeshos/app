@@ -1,7 +1,9 @@
-import Transaction from './MockeTransaction';
+import ITransaction from './MockeTransaction';
 import TransactionStatus from './TransactionStatus';
+import * as MockData from './MockData';
 
 export {
-    Transaction,
-    TransactionStatus
+    ITransaction,
+    TransactionStatus,
+    MockData,
 }
