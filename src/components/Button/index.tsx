@@ -1,20 +1,21 @@
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
 import style from './Button.style';
 
 export interface IProps {
     onClick;
+    title: string,
     clear?: boolean;
     children?: React.ReactChild[] | React.ReactChild;
 };
 
 const Button = (props:IProps) => {
     const styles = style(props);
-    const { onClick, children } = props;
+    const { onClick, title } = props;
     return (
         <TouchableOpacity onPress={onClick}>
             <View style={styles.root}>
-                {children}
+                <Text style={styles.title}>{title}</Text>
             </View>
         </TouchableOpacity>
     );

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../theme';
+import { colors, fonts } from '../../theme';
 
 const style = (props) => StyleSheet.create({
     root: {
@@ -10,9 +10,16 @@ const style = (props) => StyleSheet.create({
         borderWidth: props.clear ? 2 : 0,
         borderRadius:2,
         padding: 0,
+        margin:10,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    title:{
+        color: props.clear ? colors.caribbeanGreen : colors.white,
+        fontFamily: fonts.font.default,
+        fontSize: fonts.size.small,
+        fontWeight: 'bold',
+    },
 });
 
 export default style;
