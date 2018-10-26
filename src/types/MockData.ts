@@ -1,4 +1,5 @@
 import TransactionStatus from './TransactionStatus';
+import ITransaction from './MockeTransaction';
 
 interface IResponse {
     jsonrpc: string;
@@ -14,8 +15,12 @@ export interface IGetAddressBalanceResponse extends IResponse {
     result: string;
 }
 
-export interface IGetAddressFromTransactionResponse extends IResponse {
-    result: string; 
+export interface IGetTransactionFromAddressResponse extends IResponse {
+    result: string[]; 
+}
+
+export interface IGetTransactionFromHashResponse extends IResponse {
+    result: ITransaction;
 }
 
 export interface IGetAddressFromTransactionResponse extends IResponse {

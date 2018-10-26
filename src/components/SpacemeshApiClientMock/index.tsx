@@ -30,7 +30,7 @@ const SpacemeshApiClientMock = <P extends IProps>(Component: React.ComponentType
             apiReady = {this.state.connectedToApi}
             boradCastTransaction = {this.boradCastTransaction}
             getAddressBalance = {this.getAddressBalance}
-            getAddressFromTransaction = {this.getAddressFromTransaction}
+            getTransactionFromAddress = {this.getTransactionFromAddress}
             buySMCFromExchange = {this.buySMCFromExchange}
             getCurrentSMCPrice = {this.getCurrentSMCPrice}
             getSMCfromTestNetTap = {this.getSMCfromTestNetTap}
@@ -75,19 +75,58 @@ const SpacemeshApiClientMock = <P extends IProps>(Component: React.ComponentType
         }
 
         /**
-         * Get address from transaction
-         * @param txhash the transaction id
-         * @returns the senders address of the transaction
+         * Get all transactions sent by an address
+         * @param address account address
+         * @returns all transactions sent by address
          */
-        public getAddressFromTransaction = (txhash: string): Promise<MockData.IGetAddressFromTransactionResponse> => {
+        public getTransactionFromAddress = (address: string): Promise<MockData.IGetTransactionFromAddressResponse> => {
             return new Promise(resolve => {
                 setTimeout(() => {
                     resolve({
-                        id: 1,
-                        jsonrpc: '1.0',
-                        params:[txhash],
-                        result: '0xb60e8dd61c5d32be8058bb8eb970870f07233155',
-                    });
+                            id: 1,
+                            jsonrpc: '1.0',
+                            params:[address],
+                            result: ['0x130012017c9d75e66a5aff3895aebceaaa6a43887b3f466aa73cc0e5edeea745', 
+                            '0xaa12d099e33eccacb71d4c7b27bffa1ca2504897fe59aa5784bfdfabd363f5b9',
+                            '0xd9a2d6ac3355a03482da887b6f43083423fb8b9b2d9def1d9cfa330aad6dc886'],
+                        }
+                    );
+                }, 2000);
+            });
+        }
+
+        /**
+         * Get a transaction by its hash
+         * @param txhash transactions hash 
+         * @returns full transaction
+         */
+        public getTransactionFromHash = (txhash: string): Promise<MockData.IGetTransactionFromHashResponse> => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve({
+                            id: 1,
+                            jsonrpc: '1.0',
+                            params:[txhash],
+                            result: {                                                    
+                                number: "0x1b4",
+                                hash: "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
+                                parentHash: "0x9646252be9520f6e71339a8df9c55e4d7619deeb018d2a3f2d21fc165dde5eb5",
+                                nonce: "0xe04d296d2460cfb8472af2c5fd05b5a214109c25688d3704aed5484f9a7792f2",
+                                sha3Uncles: "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                                logsBloom: "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
+                                transactionsRoot: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+                                stateRoot: "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
+                                miner: "0x4e65fda2159562a496f9f3522f89122a3088497a",
+                                difficulty: "0x027f07",
+                                totalDifficulty:  "0x027f07",
+                                extraData: "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                size:  "0x027f07", 
+                                gasLimit: "0x9f759",
+                                gasUsed: "0x9f759",
+                                timestamp: "0x54e34e8e"
+                            }
+                        }
+                    );
                 }, 2000);
             });
         }
