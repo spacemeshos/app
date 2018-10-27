@@ -10,6 +10,7 @@ const click = () => {
 
 const WalkthroughWeb = (props) => {
     return (
+    <View style={style.wrapper}>    
       <View style={style.root}>
          <View style={style.logo}>
             <Image source={require('../../images/SM_logo_green@2x.png')} />
@@ -24,6 +25,7 @@ const WalkthroughWeb = (props) => {
            <Button onClick={click} title='Create wallet'/>
          </View>
       </View>
+    </View>
     );
 }
 

@@ -2,14 +2,21 @@ import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../theme';
 
 const webStyle = StyleSheet.create({
+    wrapper: {
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     root: {
         margin:10,
         height: 375.79,
         width: 388.66,
         backgroundColor: colors.white,
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: colors.black,
+        shadowColor: colors.black,
+        shadowOffset: { width: 0, height: 4},
+        shadowOpacity: 0.32,
+        shadowRadius: 6,
+        elevation: 10,
     },
     logo: {
         flex:1,
