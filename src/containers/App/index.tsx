@@ -3,18 +3,20 @@
 import * as React from "react";
 import Routing, { Router } from '../../utils/routing';
 import { Provider } from 'react-redux';
-import store from '../../store';
-import WalkthroughMobile from '../../components/Walkthrough/walkthrough.mobile';
-// import SecondPage from '../SecondPage';
-// import FirstPage from '../FirstPage';
-// Route
-const { Switch } = Routing;
+import store from '../../store'
+import SecondPage from '../SecondPage';
+import FirstPage from '../FirstPage';
+import WalkThrough from '../WalkThrough';
+
+const { Route, Switch } = Routing;
 
 const App = () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <WalkthroughMobile/>
+        <Route exact={true} path="/" component={FirstPage} />
+        <Route exact={true} path="/second" component={SecondPage} />
+        <Route exact={true} path="/walkthrough" component={WalkThrough} />
       </Switch>
     </Router>
   </Provider>

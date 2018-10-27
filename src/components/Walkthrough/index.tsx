@@ -1,12 +1,13 @@
-/*
 import * as React from 'react';
+import WalkThroughWeb from './walkthrough.web';
+import WalkThroughMobile from './walkthrough.mobile';
 import { Platform } from 'react-native';
-class WalkThrough extends React.Component {
-    public render = () => (  
-        (Platform.OS === 'web') 
-    
+
+const WalkThrough = () => {
+    return (
+        Platform.OS === 'web' ?    
+        <WalkThroughWeb/> : <WalkThroughMobile/>        
     );
-}   
+}
 
 export default WalkThrough;
-*/
