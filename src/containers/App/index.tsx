@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../../store'
 import SecondPage from '../SecondPage';
 import FirstPage from '../FirstPage';
+import WalkThrough from '../WalkThrough';
 
 const { Route, Switch } = Routing;
 
@@ -15,6 +16,7 @@ const App = () => (
       <Switch>
         <Route exact={true} path="/" component={FirstPage} />
         <Route exact={true} path="/second" component={SecondPage} />
+        <Route exact={true} path="/walkthrough" component={WalkThrough} />
       </Switch>
     </Router>
   </Provider>
