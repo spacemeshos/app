@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ISpacemeshApi } from '../../model';
+import { ISpacemeshMockApi } from '../../model';
 import { ITransaction, TransactionStatus, MockData} from 'src/types';
 
-interface IProps extends ISpacemeshApi{
+interface IProps extends ISpacemeshMockApi {
     apiReady: boolean;
 }
 
@@ -11,7 +11,7 @@ interface IState {
 }
 
 const SpacemeshApiClientMock = <P extends IProps>(Component: React.ComponentType<P>) => {
-    return class SpacemeshApiClient extends React.Component<P & IProps, IState> implements ISpacemeshApi {
+    return class SpacemeshApiClient extends React.Component<P & IProps, IState> implements ISpacemeshMockApi {
         constructor(props: P & IProps) {
             super(props);
             this.state = {
@@ -41,16 +41,17 @@ const SpacemeshApiClientMock = <P extends IProps>(Component: React.ComponentType
         /**
          * Broadcast a transaction to the Spacemesh network
          * @param tx raw transaction to broadcast
+         * @param hash the transaction hash. 
          * @returns transactions hash
          */
-        public boradCastTransaction = (tx: ITransaction): Promise<MockData.IBroadCastTransactionResponse> => {
+        public boradCastTransaction = (tx: ITransaction, txhash: string): Promise<MockData.IBroadCastTransactionResponse> => {
             return new Promise(resolve => {
                 setTimeout(() => {
                     resolve({
                         id:1,
                         jsonrpc: '1.0',
                         params: [tx],
-                        result: '0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331'
+                        result: txhash, /** we let the user set this, as this is mock data */
                     });
                 }, 2000);
             });

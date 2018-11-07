@@ -1,2 +1,2 @@
 export * from "./InputModel";
-export * from './SpacemeshApi';
+export * from './SpacemeshMockApi';
