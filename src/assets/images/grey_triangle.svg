@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.275 53.275">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #dbdbde;
+      }
+    </style>
+  </defs>
+  <path id="grey_triangle" class="cls-1" d="M37.671,0V37.671H0Z" transform="translate(26.638) rotate(45)"/>
+</svg>

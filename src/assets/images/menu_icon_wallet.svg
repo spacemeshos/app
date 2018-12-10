@@ -1,0 +1,11 @@
+<svg id="menu_icon_wallet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.443 18.421">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00c28c;
+      }
+    </style>
+  </defs>
+  <path id="Path_27" data-name="Path 27" class="cls-1" d="M17.521,7.379H16.6V5.535A1.85,1.85,0,0,0,14.754,3.69h-.369L12.818.555a.915.915,0,0,0-1.2-.461L2.582,3.69H1.844A1.85,1.85,0,0,0,0,5.535V16.6a1.85,1.85,0,0,0,1.844,1.844h12.91A1.85,1.85,0,0,0,16.6,16.6V14.756h.922a.871.871,0,0,0,.922-.922V8.3A.871.871,0,0,0,17.521,7.379ZM11.527,2.123l.83,1.568h-4.8ZM16.6,12.912H10.513L8.668,11.068l1.844-1.844H16.6Z" transform="translate(0 -0.023)"/>
+  <ellipse id="Ellipse_4" data-name="Ellipse 4" class="cls-1" cx="0.922" cy="0.922" rx="0.922" ry="0.922" transform="translate(11.066 10.122)"/>
+</svg>

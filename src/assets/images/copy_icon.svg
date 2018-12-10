@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 13">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #03946b;
+        font-size: 12px;
+        font-family: FontAwesome;
+        letter-spacing: 0.286em;
+        opacity: 0.7;
+      }
+    </style>
+  </defs>
+  <text id="copy_icon" class="cls-1" transform="translate(0 11)"><tspan x="0" y="0"></tspan></text>
+</svg>
