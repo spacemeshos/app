@@ -1,29 +1,7 @@
 import {ILayer} from "./layer"
 import {IProvider} from "./provider"
-
-export interface IUtils {
-    version: string;
-}
-
-export interface ITransaction {
-    // serielized transaction data - hex
-    txData: string;
-
-    // signed txData when tx is sigend
-    signature?: string;
-}
-
-
-export enum TransactionStatus {
-    Pending, // not on mesh yet
-    OnMesh, // on a mesh layer that might be reversed
-    Conirmed, // updated the state in an irreverisble layer
-}
-
-export class TransactionResult {
-    public txHash: string;
-    public result: boolean;
-}
+import {ITransaction, TransactionResult} from "./transaction"
+import {IUtils} from "./utils"
 
 export interface ISpacemeshApi {
 
