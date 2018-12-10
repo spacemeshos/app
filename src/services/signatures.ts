@@ -1,10 +1,21 @@
 import {bls} from 'bls-wasm';
 
 export interface ISignatures {
+
+    // Returns a new bls.SecretKey from the provided random seed
     NewSecretKeyFromSeed(hexStr: string) : bls.SecretKey;
+
+    // Returns a new secret key from its hex string serielized form
     NewSecretKeyFromHex(hexStr: string) : bls.SecretKey;
+
+    // Returns a secert key determinstically generated from another secret key and an index
     GenerateSecretDerivedKey(sec: bls.SecretKey, idx: number) : bls.SecretKey;
+
+    // Signs message m using key sec and returns the signature
     Sign(sec: bls.SecretKey, m: string) : bls.Signature;
+
+    // Returns ture iff message m signature was signed by the key pair identified by pub
+    Verify(pub: bls.PublicKey, sig: bls.Signature, m: string) : boolean;
 }
 
 export async function InitSignaturesLib() : Promise<ISignatures> {
@@ -30,6 +41,7 @@ export class Signatures implements ISignatures {
       return sec;
   }
 
+  // Returns a new secret key from its hex string serielized form
   public NewSecretKeyFromHex(hexStr: string) : bls.SecretKey {
       const sec = bls.SecretKey();
       sec.deserialize(hexStr);
@@ -45,7 +57,13 @@ export class Signatures implements ISignatures {
       return sec1;
   }
 
+  // Signs message m using key sec and returns the signature
   public Sign(sec: bls.SecretKey, data: string) : bls.Signature {
       return bls.sign (data);
+  }
+
+  // Returns ture iff message m signature was signed by the key pair identified by pub
+  public Verify(pub: bls.PublicKey, sig: bls.Signature, m: string) : boolean {
+      return pub.verify(sig,m);
   }
 }
