@@ -2,6 +2,7 @@ import {ILayer} from "./layer"
 import {IProvider} from "./provider"
 import {ITransaction, TransactionResult} from "./transaction"
 import {IUtils} from "./utils"
+import {BigNumber} from 'bignumber.js';
 
 export interface ISpacemeshApi {
 
@@ -33,7 +34,7 @@ export interface ISpacemeshApi {
     GetLatestIrreversibleLayerNumber(): Promise<number>;
 
     // Gets an account balance
-    GetBalance(account: string, layer: ILayer): Promise<number>;
+    GetBalance(account: string, layer: ILayer): Promise<BigNumber>;
 
     // Get the transactions count for this account. e.g. account nonce
     GetTransactionsCount(account: string, layer: ILayer): Promise<number>;
@@ -54,7 +55,7 @@ export interface ISpacemeshApi {
     // Unbsuscribe from incoming transactions for the user
     UnsubscribeFromIncomingTxs(account: string): Promise<boolean>;
 
-    // Fiat exchange rate oracle
-    GetSMCFiatValue(): Promise<number>;
+    // Returns SMC usd exchange rate via a data oracle
+    GetSmcUsdExchangeRate(): Promise<number>;
 
 }
