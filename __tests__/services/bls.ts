@@ -7,10 +7,6 @@ test('bls', async () => {
         // init the library
         await Sigs.InitSignaturesLib();
 
-        //const sec = new bls.SecretKey();
-        //sec.setByCSPRNG();
-        //console.log(sec.serializeToHexStr());
-
         // To create a secret key you need to provide 96 bytes of random seed data
         const sk = new SecertKeyEx("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1cab69abad15073b1ee50b4a5fd0347870d80336f353009722ebda1bfa43ce139e22fefb67f6c3c08011677a8309f25eb32a0e6906c9f5bf1271aa83fe22e37743a57");
 
@@ -27,6 +23,18 @@ test('bls', async () => {
 
         // Verify the signature
         expect(pk.verify(sig, msg)).toEqual(true);
+    });
+})
+
+test('bls-derive', async () => {
+
+        // init the library
+        await Sigs.InitSignaturesLib();
+
+        // To create a secret key you need to provide 96 bytes of random seed data
+        const sk = new SecertKeyEx("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1cab69abad15073b1ee50b4a5fd0347870d80336f353009722ebda1bfa43ce139e22fefb67f6c3c08011677a8309f25eb32a0e6906c9f5bf1271aa83fe22e37743a57");
+
+        sk.Dump('Private key: ');
 
         // Derive a private key from another private key at index 1
         const sk1 = sk.DeriveSecretKey(1);
