@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "asar": "^0.14.3",
-    "bls-wasm" : "0.2.1",
+    "bls-wasm": "0.2.1",
     "dotenv": "^4.0.0",
     "electron-debug": "^2.0.0",
     "electron-is-dev": "^0.3.0",
@@ -68,6 +68,7 @@
     "react-art": "^16.4.0",
     "react-native-typescript-transformer": "^1.2.9",
     "react-test-renderer": "^16.4.0",
+    "tape": "^4.9.1",
     "ts-jest": "^22.4.6",
     "typescript": "^2.9.1",
     "wait-on": "^2.0.2"

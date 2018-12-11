@@ -1,5 +1,5 @@
 export interface ITransaction {
-    // serielized transaction data - hex
+    // serielized transaction data - hex - including provided gas and gas price
     txData: string;
 
     // signed txData when tx is sigend
@@ -8,7 +8,6 @@ export interface ITransaction {
     // hex string of user public address
     address: string;
 }
-
 
 export enum TransactionStatus {
     Pending, // not on mesh yet
