@@ -1,6 +1,9 @@
-import {bls} from 'bls-wasm';
+import * as bls from 'bls-wasm';
 
 export interface ISignatures {
+
+    // Returns a new random bls.SecretKey
+    NewSecretKey() : bls.SecretKey;
 
     // Returns a new bls.SecretKey from the provided random seed
     NewSecretKeyFromSeed(hexStr: string) : bls.SecretKey;
@@ -18,7 +21,7 @@ export interface ISignatures {
     Verify(pub: bls.PublicKey, sig: bls.Signature, m: string) : boolean;
 }
 
-export async function InitSignaturesLib() : Promise<ISignatures> {
+export async public function InitSignaturesLib() : Promise<ISignatures> {
     const sig = new Signatures();
     await sig.Init();
     return sig;
@@ -35,16 +38,23 @@ export class Signatures implements ISignatures {
   // Returns a new BLS secret key from provided random seed
   // Hex string of random seed. e.g. 0x0214aef
   public NewSecretKeyFromSeed(hexStr: string) : bls.SecretKey {
-      const sec = bls.SecretKey();
+      const sec = new bls.SecretKey();
       const a = bls.fromHexStr(hexStr);
       sec.setLittleEndian(a);
       return sec;
   }
 
   // Returns a new secret key from its hex string serielized form
-  public NewSecretKeyFromHex(hexStr: string) : bls.SecretKey {
-      const sec = bls.SecretKey();
+  public NewSecretKeyFromHex(hexStr: string): bls.SecretKey {
+      const sec = new bls.SecretKey();
       sec.deserialize(hexStr);
+      return sec;
+  }
+
+  // Returns a new secret key from the provided crypto prng
+  public NewSecretKey(): bls.SecretKey {
+      const sec: bls.SecretKey = new bls.SecretKey();
+      sec.setByCSPRNG();
       return sec;
   }
 
@@ -52,8 +62,8 @@ export class Signatures implements ISignatures {
   // Used in HW wallet implementation. See relevant BIPs
   public GenerateSecretDerivedKey(sec: bls.SecretKey, idx: number) : bls.SecretKey {
       // todo: implement key deriviation
-      const sec1 = bls.SecretKey();
-      sec1.setByCPRNG();
+      const sec: bls.SecretKey = new bls.SecretKey();
+      sec.setByCPRNG();
       return sec1;
   }
 
