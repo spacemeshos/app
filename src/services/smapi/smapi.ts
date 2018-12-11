@@ -10,7 +10,7 @@ export interface ISpacemeshApi {
     Version(): Promise<string>;
 
     // Returns the API Utils object
-    Utils(): Promise<IUtils>;
+    // Utils(): Promise<IUtils>;
 
     // Sets a provider. A provider provides the spacemesh api over a connection
     SetProvider(IProvider): Promise<boolean>;

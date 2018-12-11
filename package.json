@@ -37,7 +37,8 @@
     "react-scripts-ts": "^2.16.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "sha3": "^2.0.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.12",
@@ -75,7 +76,9 @@
     "wait-on": "^2.0.2"
   },
   "babel": {
-    "presets": ["env", "react-native"
+    "presets": [
+      "env",
+      "react-native"
     ]
   },
   "jest": {
