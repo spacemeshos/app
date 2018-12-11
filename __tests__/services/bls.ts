@@ -33,6 +33,6 @@ test('bls', async () => {
         sk1.Dump('Derived private key: ')
 
         const str1 = sk1.SerializeToHexStr();
-        expect(str1).toEqual("50e2401a84252b3f9b77de8ec22361e1ec258853a133af6bf6d67355e86eba17")
+        expect(str1).toEqual("0af718562e2bd0c6b1cb72d6a051828bc8c5ca44d637e5fa8552c952b67a2373")
     });
 })

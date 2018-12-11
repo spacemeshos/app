@@ -14,7 +14,6 @@ export class SecertKeyEx  {
 
     // seed: 192 bytes hex string
     public constructor(seed: string) {
-        console.log(seed.length);
         if (seed.length != 192) throw new Error('Unexpected input seed - must be a 192 chars hex string.');
         const rndSeed = seed.substring(0,96);
         const chainCode = seed.substring(96,192);
@@ -45,12 +44,10 @@ export class SecertKeyEx  {
     public DeriveSecretKey(i: number): SecertKeyEx {
 
         // newKeyRndSeed = Keccak512(chainCode, i, rndSeed).substring(0,96)
-        const hash = new Keccak(512);
+        const hash = new Keccak(384); // Keccak 384 has size is 48 bytes
         hash.update(this.chainCode);
         hash.update(i.toString());
         hash.update(this.rndSeed);
-        const str1:string = hash.digest('hex').substring(0, 96); // we take the first 48 bytes
-        console.log("hash: " + str1);
-        return new SecertKeyEx(str1 + this.chainCode);
+        return new SecertKeyEx(hash.digest('hex') + this.chainCode);
     }
 }
