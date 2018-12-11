@@ -6,7 +6,7 @@ export class SecertKeyEx  {
     // 48 bytes hex encoded string - 96 chars
     private chainCode: string;
 
-    // 48 bytes hex encoded string - 96 chars;
+    // 48 bytes hex encoded string - 96 chars
     private rndSeed: string;
 
     // contained secretKey
@@ -44,7 +44,7 @@ export class SecertKeyEx  {
     // i: [1...]
     public DeriveSecretKey(i: number): SecertKeyEx {
 
-        // newKeyRndSeed = Keccak(chainCode, i, rndSeed)
+        // newKeyRndSeed = Keccak512(chainCode, i, rndSeed).substring(0,96)
         const hash = new Keccak(512);
         hash.update(this.chainCode);
         hash.update(i.toString());
