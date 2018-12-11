@@ -3,18 +3,21 @@ import { Keccak } from 'sha3';
 
 export class SecertKeyEx  {
 
-    // 48 bytes hex encoded string
+    // 48 bytes hex encoded string - 96 chars
     private chainCode: string;
 
-    // 48 bytes hex encoded string
+    // 48 bytes hex encoded string - 96 chars;
     private rndSeed: string;
 
     // contained secretKey
     private s: bls.SecretKey;
 
-    // rndSeed: 48 bytes hex encoded
-    // chainCode: 48 random bytes hex encoded string
-    public constructor(rndSeed: string, chainCode: string) {
+    // seed: 192 bytes hex string
+    public constructor(seed: string) {
+        console.log(seed.length);
+        if (seed.length != 192) throw new Error('Unexpected input seed - must be a 192 chars hex string.');
+        const rndSeed = seed.substring(0,96);
+        const chainCode = seed.substring(96,192);
         this.s = new bls.SecretKey();
         this.rndSeed = rndSeed;
         this.chainCode = chainCode;
@@ -42,11 +45,12 @@ export class SecertKeyEx  {
     public DeriveSecretKey(i: number): SecertKeyEx {
 
         // newKeyRndSeed = Keccak(chainCode, i, rndSeed)
-        const hash = new Keccak(256);
+        const hash = new Keccak(512);
         hash.update(this.chainCode);
         hash.update(i.toString());
         hash.update(this.rndSeed);
-        const str1:string = hash.digest('hex');
-        return new SecertKeyEx(str1, this.chainCode);
+        const str1:string = hash.digest('hex').substring(0, 96); // we take the first 48 bytes
+        console.log("hash: " + str1);
+        return new SecertKeyEx(str1 + this.chainCode);
     }
 }

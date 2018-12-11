@@ -4,29 +4,35 @@ import * as bls from 'bls-wasm';
 
 test('bls', async () => {
 
+        // init the library
         await Sigs.InitSignaturesLib();
 
-        const sec = new bls.SecretKey();
-        sec.setByCSPRNG();
-        console.log(sec.serializeToHexStr());
+        //const sec = new bls.SecretKey();
+        //sec.setByCSPRNG();
+        //console.log(sec.serializeToHexStr());
 
-        const sk = new SecertKeyEx("95ebca1b4b8d5ae3376c2b24b8bc2ff5c458fa7fd1e3e69dfde0e865943da51c6d2f3205c936c5b05d130a29ec67bd57",
-        "bea6c8baa39837b2739e3ecca022a5621aec2ff65d4a0c8fd1ce295a7d60f750e59cc7d963a5312fec2e864f2d13a75e");
+        // To create a secret key you need to provide 96 bytes of random seed data
+        const sk = new SecertKeyEx("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1cab69abad15073b1ee50b4a5fd0347870d80336f353009722ebda1bfa43ce139e22fefb67f6c3c08011677a8309f25eb32a0e6906c9f5bf1271aa83fe22e37743a57");
+
         sk.Dump('Private key: ');
 
+        // Obtain public key from private
         const pk = sk.GetPublicKey();
         pk.dump('Public key: ');
         const msg = "Spacemesh rocks";
 
-        const sig = sk.Sign(msg);
+        // Sign a message
+        const sig: bls.Signature = sk.Sign(msg);
         // sig.dump('Signature: ');
 
+        // Verify the signature
         expect(pk.verify(sig, msg)).toEqual(true);
 
-        // test dervice
+        // Derive a private key from another private key at index 1
         const sk1 = sk.DeriveSecretKey(1);
         sk1.Dump('Derived private key: ')
+
         const str1 = sk1.SerializeToHexStr();
-        expect(str1).toEqual("907fda7ccf703fa1d5202b0de5e243d024fb477a15a34fcada0b9dfbb4b03538")
+        expect(str1).toEqual("50e2401a84252b3f9b77de8ec22361e1ec258853a133af6bf6d67355e86eba17")
     });
 })
