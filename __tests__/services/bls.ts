@@ -7,7 +7,8 @@ test('bls', async () => {
         // init the library
         await Sigs.InitSignaturesLib();
 
-        // To create a secret key you need to provide 96 bytes of random seed data
+        // To create a secret key you need to provide 512 bits of seed
+        // The 24 words seed phrase is used to generate 128 bits random seed. From it a 512 bits seed using sha-512
         const sk = new SecertKeyEx("6935d7849c8756c07558f46faa34ff88a75e476ee1b81232a587ccd8a1c32b7fa50dfc47967bcfa860ef05402c1c77ac8fdd4edee05c8bb0d54f05db98c253fe");
 
         expect(sk.SerializeToHexStr()).toEqual("6935d7849c8756c07558f46faa34ff88a75e476ee1b81232a587ccd8a1c32b3f");

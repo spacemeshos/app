@@ -15,7 +15,7 @@ export class SecertKeyEx  {
     // seed: 64 bytes hex string
     public constructor(seed: string) {
         if (seed.length != 128) throw new Error('Unexpected input length. Expected 128 chars hex string.');
-        
+
         const rndSeed = seed.substring(0,96);
         const chainCode = seed.substring(96,128);
         this.s = new bls.SecretKey();
@@ -41,9 +41,10 @@ export class SecertKeyEx  {
         return this.s.serializeToHexStr();
     }
 
+    // Simple key deriviaation function supporting a large number of derived keys
+    // from a master key
     // i: [1...]
     public DeriveSecretKey(i: number): SecertKeyEx {
-
         // newKeyRndSeed = Keccak512(chainCode, i, rndSeed).substring(0,96)
         const hash = new Keccak(384); // Keccak 384 has size is 48 bytes
         hash.update(this.chainCode);
