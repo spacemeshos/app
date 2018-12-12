@@ -8,15 +8,15 @@ test('bls', async () => {
         await Sigs.InitSignaturesLib();
 
         // To create a secret key you need to provide 96 bytes of random seed data
-        const sk = new SecertKeyEx("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1cab69abad15073b1ee50b4a5fd0347870d80336f353009722ebda1bfa43ce139e22fefb67f6c3c08011677a8309f25eb32a0e6906c9f5bf1271aa83fe22e37743a57");
+        const sk = new SecertKeyEx("6935d7849c8756c07558f46faa34ff88a75e476ee1b81232a587ccd8a1c32b7fa50dfc47967bcfa860ef05402c1c77ac8fdd4edee05c8bb0d54f05db98c253fe");
 
-        expect(sk.SerializeToHexStr()).toEqual("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1ca36");
+        expect(sk.SerializeToHexStr()).toEqual("6935d7849c8756c07558f46faa34ff88a75e476ee1b81232a587ccd8a1c32b3f");
 
         // Obtain public key from private
         const pk = sk.GetPublicKey();
         // pk.dump('Public key: ');
 
-        expect(pk.serializeToHexStr()).toEqual("b804814dbce8c20bdbcce6454f59a590002f3d608f00efa3c94c5cf63be8f84dd813ed2a4abaa9a999584a87a6b63f09958cfe03c90a8a9aea85df052d226d10da4090670df51e6bb35eb3d52eac1f1ae1795a56e8a21aad65777b9b4deeae86");
+        expect(pk.serializeToHexStr()).toEqual("ae6e60dfd0ec656a510c2665da7198594aac30abc448fe9eacac4ab45691bf8226b7b075c6d33814097656a686bc1418a3c73a9dc8225647c96e32b1af0c85d1e950d035046c7aa4835d324bf86ae89a7332ce394d795dace85f380f43464896");
 
         const msg = "Spacemesh rocks";
 
@@ -35,13 +35,13 @@ test('bls-derive', async () => {
         await Sigs.InitSignaturesLib();
 
         // To create a secret key you need to provide 96 bytes of random seed data
-        const sk = new SecertKeyEx("329e323b89be6ff6e4af669fcc2862c27943e1f09f9dec9cca405ef11aa1cab69abad15073b1ee50b4a5fd0347870d80336f353009722ebda1bfa43ce139e22fefb67f6c3c08011677a8309f25eb32a0e6906c9f5bf1271aa83fe22e37743a57");
+        const sk = new SecertKeyEx("61def159f10c4274cfecfd52ea742a683e682f1d961d89a4c46d731a426f57a68133981fe0c6b82403e64c031d427370f825107e6d0455c61e97e9666a2b4266");
 
         // Derive a private key from another private key at index 1
         const sk1 = sk.DeriveSecretKey(1);
         // sk1.Dump('Derived private key: ')
 
         const str1 = sk1.SerializeToHexStr();
-        expect(str1).toEqual("0af718562e2bd0c6b1cb72d6a051828bc8c5ca44d637e5fa8552c952b67a2373")
+        expect(str1).toEqual("af3734bddc7f8c2def89244b5d85bee6cc152dbf4a3febf6edff17bda5196368")
     });
 })

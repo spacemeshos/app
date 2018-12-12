@@ -6,17 +6,18 @@ export class SecertKeyEx  {
     // 48 bytes hex encoded string - 96 chars
     private chainCode: string;
 
-    // 48 bytes hex encoded string - 96 chars
+    // 16 bytes hex encoded string - 32 chars
     private rndSeed: string;
 
     // contained secretKey
     private s: bls.SecretKey;
 
-    // seed: 192 bytes hex string
+    // seed: 64 bytes hex string
     public constructor(seed: string) {
-        if (seed.length != 192) throw new Error('Unexpected input seed - must be a 192 chars hex string.');
+        if (seed.length != 128) throw new Error('Unexpected input length. Expected 128 chars hex string.');
+        
         const rndSeed = seed.substring(0,96);
-        const chainCode = seed.substring(96,192);
+        const chainCode = seed.substring(96,128);
         this.s = new bls.SecretKey();
         this.rndSeed = rndSeed;
         this.chainCode = chainCode;
