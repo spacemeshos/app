@@ -23,9 +23,9 @@ test('wallet', async () => {
 
     // AES encrypt and decrypt wallet json data file
     // Some of the wallet fields are encrypted - here we just use a string
-    const text = 'This is wallet data file. It stores the master random seed as well as additional accounts data - key pairs, number of txs, master seed: ' + seed;
+    const data = 'This is wallet data file. It stores the master random seed as well as additional accounts data - key pairs, number of txs, master seed: ' + seed;
 
-    const textBytes = aes.utils.utf8.toBytes(text);
+    const textBytes = aes.utils.utf8.toBytes(data);
     const aesCtr = new aes.ModeOfOperation.ctr(derivedKey, new aes.Counter(5));
     const encryptedBytes = aesCtr.encrypt(textBytes);
     const encryptedHex = aes.utils.hex.fromBytes(encryptedBytes);
@@ -36,6 +36,8 @@ test('wallet', async () => {
     const decryptedBytes = aes1Ctr.decrypt(encryptedBytes);
     const decryptedText = aes.utils.utf8.fromBytes(decryptedBytes);
     console.log('Decrypted: ' + decryptedText);
+    console.log('Source text: ' + data);
 
+    expect(data).toMatch(decryptedText);
 
 })
