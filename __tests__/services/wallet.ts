@@ -4,21 +4,22 @@ import * as aes from 'aes-js';
 
 test('wallet', async () => {
 
-    // Generate a 12 words mnemonic
+    // Generate a 12 words mnemonic (128 bits of entropy)
     const m = bip39.generateMnemonic();
     console.log("Mnemonic: ", m);
     expect(bip39.validateMnemonic(m)).toEqual(true);
 
-    // Generate 64 seed bytes from phrase - this is a wallet's master seed
+    // Generate 64 seed bytes (512 bits) from phrase - this is a wallet's master seed
     const seed = bip39.mnemonicToSeedHex(m);
-    console.log("Mnemonic (64 bytes): ", seed);
+    console.log("Seed (64 bytes): ", seed);
 
-    // Wallet's user provided pin (can be any length) - we'll likely to ask for at least 8 digits/chars combo
+    // Wallet's user provided pin (technically can be any length and include any utf-8 encoded chars)
+    // we'll likely to ask for at least 8 digits/chars combo
     const pin = '24815214';
 
-    // Derive a 32 bytes (256 bits) AES sym key from the user provided pin
+    // Derive a 32 bytes (256 bits) AES sym enc/dec key from the user provided pin
     const salt = 'Spacemesh blockmesh';
-    const derivedKey = pbkdf2.pbkdf2Sync(pin, salt, 100000, 32, 'sha512');
+    const derivedKey = pbkdf2.pbkdf2Sync(pin, salt, 1000000, 32, 'sha512');
     console.log("AES sym key: " + derivedKey.toString('hex'));
 
     // AES encrypt and decrypt wallet json data file
@@ -29,14 +30,14 @@ test('wallet', async () => {
     const aesCtr = new aes.ModeOfOperation.ctr(derivedKey, new aes.Counter(5));
     const encryptedBytes = aesCtr.encrypt(textBytes);
     const encryptedHex = aes.utils.hex.fromBytes(encryptedBytes);
-    console.log(encryptedHex);
+    console.log('Encrypted data: ' + encryptedHex);
 
     // Decrypt encrypted wallet file data using the same AES key
     const aes1Ctr = new aes.ModeOfOperation.ctr(derivedKey, new aes.Counter(5));
     const decryptedBytes = aes1Ctr.decrypt(encryptedBytes);
     const decryptedText = aes.utils.utf8.fromBytes(decryptedBytes);
-    console.log('Decrypted: ' + decryptedText);
-    console.log('Source text: ' + data);
+    //console.log('Decrypted: ' + decryptedText);
+    //console.log('Source text: ' + data);
 
     expect(data).toMatch(decryptedText);
 
