@@ -9,6 +9,8 @@
 </a>
 </p>
 
+# WARNING
+This repo is depracted. The Spacemesh app is now developed here: [smapp](https://github.com/spacemeshos/smapp)
 
 The cosmic Spacemesh App containing the Spacemesh Wallet and the Spacemesh Dashboard.
 This app is based on the [Spacemesh Cosmic Apps Seed](https://github.com/spacemeshos/cosmic).
