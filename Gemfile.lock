@@ -49,7 +49,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubyzip (1.2.2)
+    rubyzip (2.3.0)
     slowhandcuke (0.0.3)
       cucumber
     thor (0.20.0)
